@@ -4,7 +4,10 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @WebServlet(name = "TilføjEmneServlet", value = "/TilføjEmneServlet")
 public class TilEmneServlet extends HttpServlet {
