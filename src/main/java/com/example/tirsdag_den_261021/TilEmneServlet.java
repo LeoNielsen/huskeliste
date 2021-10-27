@@ -47,4 +47,9 @@ public class TilEmneServlet extends HttpServlet {
 
         request.getRequestDispatcher("WEB-INF\\bruger.jsp").forward(request,response);
     }
+
+    public void onClick(){
+        
+
+    }
 }
