@@ -4,8 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @WebServlet(name = "TilføjEmneServlet", value = "/TilføjEmneServlet")
 public class TilEmneServlet extends HttpServlet {
@@ -20,19 +19,19 @@ public class TilEmneServlet extends HttpServlet {
 
 
         HttpSession session = request.getSession();
-        List<String> emneList = (List<String>) session.getAttribute("emneList");
+        Set<String> emneList = (Set<String>) session.getAttribute("emneList");
 
 
         if (emneList == null) {
-            emneList = new ArrayList<>();
+            emneList = new HashSet<>();
         }
 
         ServletContext servletContext =getServletContext();
 
-        List<String> allebrugersemner = (List<String>) servletContext.getAttribute("allebrugersemner");
+        Set<String> allebrugersemner = (Set<String>) servletContext.getAttribute("allebrugersemner");
 
         if (allebrugersemner == null){
-            allebrugersemner = new ArrayList<>();
+            allebrugersemner = new HashSet<>();
         }
 
         allebrugersemner.add(emne);
