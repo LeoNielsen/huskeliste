@@ -27,10 +27,14 @@ du er nu logget ind som ${sessionScope.navn}
 
 <c:forEach items="${sessionScope.emneList}" var="emne">
 
+    <div onclick="style.display='none'">
+        <button type="button" >Delete</button>
     ${emne}
+    </div>
     <br>
 
 </c:forEach>
+
 </body>
 <head>
     <title>bruger side</title>
